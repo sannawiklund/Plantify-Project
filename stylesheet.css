@@ -1,7 +1,7 @@
 body {
     box-sizing: border-box;
     font-family: "DM Serif Text", serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     background-color: rgb(43, 70, 44);
 }
@@ -39,8 +39,8 @@ h1 {
     grid-row: 2;
     z-index: 1;
     color:  #cccccc;
-    font-size: 60px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin: 0;
     letter-spacing: 2px;
 }
 
@@ -48,8 +48,8 @@ header h2 {
     grid-column: 1;
     grid-row: 3;
     z-index: 1;
-    font-size: 25px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
     color:  #cccccc;
     font-weight: 200;
 }
