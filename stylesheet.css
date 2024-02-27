@@ -3,20 +3,58 @@ body {
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: normal;
-    background-color: black;
-}
-
-.container {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    max-width: 80%;
     background-color: rgb(43, 70, 44);
 }
 
+.container {
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 60%;
+    background-color: #cccccc;
+    border-radius: 20px;
+}
+
 header {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr, 1fr, 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     text-align: center;
     justify-content: center;
+    border-radius: 20px;
+}
+
+img {
+    grid-column: 1 / span 3; /* Fyller alla kolumner */
+    grid-row: 1 / span 3; /* Fyller alla rader */
+    z-index: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    grid-column: 1;
+    grid-row: 2;
+    z-index: 1;
+    color:  #cccccc;
+    font-size: 60px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    grid-column: 1;
+    grid-row: 3;
+    z-index: 1;
+    font-size: 25px;
+    margin-bottom: 50px;
+    color:  #cccccc;
+    font-weight: 200;
+}
+
+main :where(h2, h3, p) {
+    padding: 5px;
+    margin: 5px;
 }
