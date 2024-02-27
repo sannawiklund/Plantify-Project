@@ -1,0 +1,22 @@
+body {
+    box-sizing: border-box;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    max-width: 80%;
+    background-color: rgb(43, 70, 44);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
