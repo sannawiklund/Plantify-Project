@@ -1,4 +1,5 @@
 body {
+    display: flex;
     box-sizing: border-box;
     font-family: "DM Serif Text", serif;
     font-weight: 300;
@@ -11,7 +12,7 @@ body {
 #app {
     justify-content: center;
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 60%;
     background-color: #cccccc;
     border-radius: 20px;
 }
@@ -52,8 +53,9 @@ img {
     grid-column: 1;
     grid-row: 3;
     z-index: 1;
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 10px;
     color: #cccccc;
     font-weight: 200;
 }
@@ -68,26 +70,32 @@ img {
     max-height: 40px;
     min-height: 30px;
     max-width: 530px;
-    min-width: 530px;
     position: relative;
 }
 
-.plant-form input{
+.plant-form input {
     width: 100%;
 }
 
-.plant-form button{
+.plant-form button {
     position: absolute;
     background-color: white;
-    border:none;
+    border: none;
     height: 70%;
+    margin-right: 10px;
+    /* padding: 10px; */
     border-radius: 20px;
     aspect-ratio: 1;
     right: 0;
-    top: 15%;
+    /* top: 15%; */
+    color: #123813;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    /* font-weight: 500; */
 }
 
-.plant-form button:hover{
+.plant-form button:hover {
+    color: #123813;
     background-color: rgba(173, 198, 173, 0.2);
 }
 
@@ -95,7 +103,7 @@ img {
 #plant-display-text::placeholder {
     margin: 0 auto;
     text-transform: uppercase;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
     font-weight: 300;
     color: #123813;
@@ -108,8 +116,7 @@ input#plant-display-text {
     max-height: 40px;
     min-height: 30px;
     max-width: 530px;
-    min-width: 530px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 22px;
     font-weight: 300;
     color: #008304;
@@ -117,3 +124,13 @@ input#plant-display-text {
     border-radius: 20px;
     border-style: none;
 }
+
+/* @media only screen and (max-width: 1520px) {
+    #title {
+    #app max width bör öka med 10-20% desto mindre skärmen bli.
+    Vid mobile så ska bredden vara 100% så att enbart app-content syns, ej bakgrund på sidorna. 
+    - 1920px bred på inkopplad skärm (anpassade storlekar: h1: font-size: 50px; h2: font-size: 20px; och plant-form.
+    - 1610px och nedåt skär sig h1
+    - 1520px bred på laptop
+    }
+} */
