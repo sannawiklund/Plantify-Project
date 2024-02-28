@@ -3,13 +3,15 @@ body {
     font-family: "DM Serif Text", serif;
     font-weight: 300;
     font-style: normal;
+    background-image: url("https://a-static.besthdwallpaper.com/green-leaves-with-black-shadow-wallpaper-1920x1080-78534_48.jpg");
     background-color: rgb(43, 70, 44);
+    
 }
 
 .container {
     justify-content: center;
     margin: 0 auto;
-    max-width: 60%;
+    max-width: 50%;
     background-color: #cccccc;
     border-radius: 20px;
 }
