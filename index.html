@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="main.js" defer></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/7963/7963920.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
     <title>Plantify-Project</title>
 </head>
 
@@ -23,13 +26,18 @@
         </header>
 
         <main>
-            <form class="plant-form">
-                <input type ="text" id="plant-display-text" class="plant-input" placeholder="Search for a plant" />
+            <!-- Vet inte om plant-form borde flyttas till header eller ej? -->
+            <form class="plant-form"> 
+                <input type="text" id="plant-display-text" class="plant-input" placeholder="Search for a plant" />
             </form>
         </main>
 
-        <footer>
-
+        <footer class='filter-options'>
+        <ul>
+            <li><label><input type="radio" name="filter" value="all" v-model="filterMode"> All</label></li>
+            <li><label><input type="radio" name="filter" value="need-water" v-model="filterMode"> Need water!</label></li>
+            <li><label><input type="radio" name="filter" value="watered" v-model="filterMode"> Watered </label></li>
+        </ul>
         </footer>
     </div>
 </body>
