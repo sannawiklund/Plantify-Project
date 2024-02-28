@@ -5,7 +5,7 @@ body {
     font-style: normal;
     background-image: url("https://a-static.besthdwallpaper.com/green-leaves-with-black-shadow-wallpaper-1920x1080-78534_48.jpg");
     background-color: rgb(43, 70, 44);
-    
+
 }
 
 #app {
@@ -28,8 +28,10 @@ header {
 }
 
 img {
-    grid-column: 1 / span 3; /* Fyller alla kolumner */
-    grid-row: 1 / span 3; /* Fyller alla rader */
+    grid-column: 1 / span 3;
+    /* Fyller alla kolumner */
+    grid-row: 1 / span 3;
+    /* Fyller alla rader */
     z-index: 0;
     margin: 0 auto;
     max-width: 100%;
@@ -40,7 +42,7 @@ img {
     grid-column: 1;
     grid-row: 2;
     z-index: 1;
-    color:  #cccccc;
+    color: #cccccc;
     font-size: 50px;
     margin: 0;
     letter-spacing: 2px;
@@ -52,11 +54,46 @@ img {
     z-index: 1;
     font-size: 20px;
     margin-bottom: 20px;
-    color:  #cccccc;
+    color: #cccccc;
     font-weight: 200;
 }
 
-main :where(h2, h3, p) {
+/* Input-Form Styling (Placering av inputrutan)*/
+.plant-form {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem;
+    max-height: 40px;
+    min-height: 30px;
+    max-width: 530px;
+    min-width: 530px;
+}
+
+/* Placeholder-Text Styling (Texten som syns innan inmatning) */
+#plant-display-text::placeholder {
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #123813;
     padding: 5px;
-    margin: 5px;
+}
+
+/* Input Styling (Texten som syns när användaren matat in något */
+input#plant-display-text {
+    text-align: center;
+    max-height: 40px;
+    min-height: 30px;
+    max-width: 530px;
+    min-width: 530px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    color: #008304;
+    padding: 5px;
+    border-radius: 20px;
+    border-style: none;
 }
