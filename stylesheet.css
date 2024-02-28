@@ -87,6 +87,10 @@ img {
     top: 15%;
 }
 
+.plant-form button:hover{
+    background-color: rgba(173, 198, 173, 0.2);
+}
+
 /* Placeholder-Text Styling (Texten som syns innan inmatning) */
 #plant-display-text::placeholder {
     margin: 0 auto;
