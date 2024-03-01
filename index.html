@@ -27,8 +27,8 @@
 
         <main>
             <!-- Vet inte om plant-form borde flyttas till header eller ej? -->
-            <form class="plant-form" @submit.prevent="fetchData">  <!-- @submit.prevent förhindrar sidan från att uppdateras vid formulärinsändning -->
-                <input type="text" id="plant-display-text" v-model="searchQuery" class="plant-input" placeholder="Find your plant" />
+            <form class="plant-form">
+                <input type="text" id="plant-display-text" class="plant-input" placeholder="Find your plant" />
                 <button type="submit">Search</button>
             </form>
 
