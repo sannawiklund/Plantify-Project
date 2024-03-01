@@ -1,4 +1,4 @@
-const app = Vue.createApp({
+Vue.createApp({
     data() {
         return {
             plantName: '',
@@ -18,6 +18,11 @@ const app = Vue.createApp({
                 if (response.ok) {
                     // Parsa JSON och uppdatera jsonData med den hämtade datan
                     this.jsonData = await response.json();
+                    let plantArray = this.jsonData.housePlants;
+                    this.jsonData = plantArray.filter((plant) =>
+                        plant.commonName.includes(this.plantName) ||
+                        plant.scientificName.includes(this.plantName)
+                    );
                 } else {
                     console.error('Error fetching data:', response.statusText);
                 }
@@ -33,6 +38,4 @@ const app = Vue.createApp({
             this.selectedPlant = plant;
         },
     },
-});
-
-app.mount('#app');
+}).mount('#app');

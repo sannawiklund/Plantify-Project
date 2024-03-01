@@ -43,7 +43,7 @@
             </div>
 
             <ul class="plant-list">
-                <li v-for="plant in jsonData.housePlants" :key="plant.commonName">
+                <li v-for="plant in jsonData" :key="plant.commonName">
                     <!-- Användaren klickar för att lägga till vald planta i sin lista -->
                     <button @click="selectPlant(plant)">{{ plant.commonName }}</button>
                 </li>
