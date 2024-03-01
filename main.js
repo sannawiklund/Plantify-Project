@@ -1,27 +1,38 @@
-Vue.createApp({
+const app = Vue.createApp({
     data() {
-      return {
-        jsonData: [],
-      };
+        return {
+            plantName: '',
+            jsonData: { housePlants: [] }, //Lagrar housePlants-datan i en lista
+            selectedPlant: null, //Den valda plantan
+            projectTitle: 'Plantify Project',
+            subTitle: '🌿 Your plant\'s best friend 🌿',
+        };
     },
-
     methods: {
-      async fetchJson() {
-        try {
-          let response = await fetch('data.json');
-          if (!response.ok) {
-            throw new Error('Something went wrong');
-          }
-          this.jsonData = await response.json();
-          console.log('Hämtad data:', this.jsonData);
-        } catch (error) {
-          console.error('Fel:', error.message);
-        }
-      },
-    },
-    mounted() {
-      this.fetchJson();
-    },
+        async fetchJson() {
+            try {
+                // Fetchar datan från json-filen
+                const response = await fetch('data.json');
 
-    computed: {},
-  }).mount('#app');
+                // Kontrollera att fetch gått igenom (status 200)
+                if (response.ok) {
+                    // Parsa JSON och uppdatera jsonData med den hämtade datan
+                    this.jsonData = await response.json();
+                } else {
+                    console.error('Error fetching data:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+
+            // Återställ selectedPlant när ny sökning görs
+            this.selectedPlant = null;
+        },
+        selectPlant(plant) {
+            // Uppdatera selectedPlant med den valda växten
+            this.selectedPlant = plant;
+        },
+    },
+});
+
+app.mount('#app');

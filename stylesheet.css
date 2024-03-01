@@ -6,7 +6,6 @@ body {
     font-style: normal;
     background-image: url("https://a-static.besthdwallpaper.com/green-leaves-with-black-shadow-wallpaper-1920x1080-78534_48.jpg");
     background-color: rgb(43, 70, 44);
-
 }
 
 #app {
@@ -40,7 +39,7 @@ img {
     max-height: 100%;
 }
 
-#title {
+#app .title {
     grid-column: 1;
     grid-row: 2;
     z-index: 1;
@@ -50,7 +49,7 @@ img {
     letter-spacing: 2px;
 }
 
-#second-title {
+#app .subTitle {
     grid-column: 1;
     grid-row: 3;
     z-index: 1;
