@@ -49,6 +49,7 @@
                 <li v-for="plant in jsonData" :key="plant.commonName">
                     <!-- Användaren klickar för att lägga till vald planta i sin lista -->
                     <button @click="selectPlant(plant)">{{ plant.commonName }}</button>
+                    <button @click="addPlantToMyPlants">Add to my plants</button>
                 </li>
             </ul>
 
