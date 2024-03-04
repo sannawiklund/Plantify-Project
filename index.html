@@ -39,7 +39,11 @@
                 <p>Watering Schedule: {{ selectedPlant.wateringSchedule }}</p>
                 <p>Sunlight Requirement: {{ selectedPlant.sunlightRequirement }}</p>
                 <p>Poisonous: {{ selectedPlant.poisonous ? 'Yes' : 'No' }}</p>
+
+                <!-- Lägg till knapp för att lägga till växten i myPlants-listan -->
+                <button @click="addPlantToMyPlants">Add plant</button>
             </div>
+
 
             <ul class="plant-list">
                 <li v-for="plant in jsonData" :key="plant.commonName">
@@ -48,17 +52,25 @@
                 </li>
             </ul>
 
-            <!-- <h3>My plants</h3>
+            <h3>My Plants</h3>
             <ul class="my-plants">
+                <li v-for="myPlant in myPlants" :key="myPlant.commonName">
+                    {{ myPlant.commonName }}
+                    <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
+                    <button @click="removePlant(myPlant)">Remove</button>
+                    <button @click="plaintInformation(myPlant)">Information</button>
+                </li>
+            </ul>
 
-            </ul> -->
-             <ul>
-            <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
-            <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs water</label></li>
-            <li><label><input type="radio" name="filter" value="Watered" v-model="filterPlants"> Watered</label></li>
-            </ul> 
+            <ul>
+                <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
+                <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
+                        water</label></li>
+                <li><label><input type="radio" name="filter" value="Watered" v-model="filterPlants"> Watered</label>
+                </li>
+            </ul>
             <!--Antal växter som behöver vatten -->
-           
+
         </main>
 
     </div>

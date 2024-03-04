@@ -34,18 +34,39 @@ Vue.createApp({
             // Återställ selectedPlant när ny sökning görs
             this.selectedPlant = null;
         },
+
         selectPlant(plant) {
             // Uppdatera selectedPlant med den valda växten
             this.selectedPlant = plant;
         },
 
-        addPlantToMyPlants(){
-            //on click, add to array
-            //Ska man kunna lägga till samma planta flera gånger?
+        addPlantToMyPlants() {
+            if (this.selectedPlant) {
+                this.myPlants.push({
+                    commonName: this.selectedPlant.commonName,
+                    // Lägg till andra relevanta attribut från selectedPlant
+                });
+            }            
+            // on click, add to array
+            // Ska man kunna lägga till samma planta flera gånger?
         },
 
-        removePlant(){
-            //on click, remove plant from array
+        removePlant(myPlant) {
+            const index = this.myPlants.indexOf(myPlant);
+            if (index !== -1) {
+                this.myPlants.splice(index, 1);
+            }
+        },
+
+        plantInformation(plant){
+            if (this.selectedPlant) {
+                this.myPlants.push({
+                    wateringSchedule: this.selectedPlant.wateringSchedule,
+                    sunlight: this.selectedPlant.sunlightRequirement, 
+                    poisonous: this.selectedPlant.poisonous,
+                    // Lägg till andra relevanta attribut från selectedPlant
+                });
+            }
         },
 
         orderPlants(){
@@ -60,6 +81,6 @@ Vue.createApp({
 
         },
 
-        
     },
+
 }).mount('#app');
