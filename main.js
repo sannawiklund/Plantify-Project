@@ -52,6 +52,14 @@ Vue.createApp({
             //By name, requirements, room?
         },
 
+        countMyPlants(){
+
+        },
+
+        filterPlants(){
+
+        },
+
         
     },
 }).mount('#app');
