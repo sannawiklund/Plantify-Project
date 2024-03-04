@@ -6,6 +6,7 @@ Vue.createApp({
             selectedPlant: null, //Den valda plantan
             projectTitle: 'Plantify Project',
             subTitle: '🌿 Your plant\'s best friend 🌿',
+            myPlants: [], //Här kan man lägga en array av sina egna plantor?
         };
     },
     methods: {
@@ -37,5 +38,20 @@ Vue.createApp({
             // Uppdatera selectedPlant med den valda växten
             this.selectedPlant = plant;
         },
+
+        addPlantToMyPlants(){
+            //on click, add to array
+            //Ska man kunna lägga till samma planta flera gånger?
+        },
+
+        removePlant(){
+            //on click, remove plant from array
+        },
+
+        orderPlants(){
+            //By name, requirements, room?
+        },
+
+        
     },
 }).mount('#app');
