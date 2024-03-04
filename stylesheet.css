@@ -125,6 +125,27 @@ input#plant-display-text {
     border-style: none;
 }
 
+#app .plant-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    list-style-type: none;
+}
+
+#app .selected-Plant, .plant-list {
+    grid-column: 1;
+    margin: 10px;
+    list-style-type: none;
+}
+
+#app .my-plants, .plant-info, .plant-filters {
+    grid-column: 2;
+    margin: 10px;
+    list-style-type: none;
+}
+
 /* @media only screen and (max-width: 1520px) {
     #title {
     #app max width bör öka med 10-20% desto mindre skärmen bli.

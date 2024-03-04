@@ -32,44 +32,54 @@
                 <button type="submit">Search</button>
             </form>
 
-            <div v-if="selectedPlant">
-                <!-- Uppdatera för att visa information om den valda växten -->
-                <h3>{{ selectedPlant.commonName }}</h3>
-                <p>Scientific Name: {{ selectedPlant.scientificName }}</p>
-                <p>Watering Schedule: {{ selectedPlant.wateringSchedule }}</p>
-                <p>Sunlight Requirement: {{ selectedPlant.sunlightRequirement }}</p>
-                <p>Poisonous: {{ selectedPlant.poisonous ? 'Yes' : 'No' }}</p>
+            <!-- Separat section för allt som dyker upp när användaren gör en sökning -->
+            <div class="plant-section">
 
-                <!-- Lägg till knapp för att lägga till växten i myPlants-listan -->
-                <button @click="addPlantToMyPlants">Add plant</button>
+                <div class="selected-Plant" v-if="selectedPlant">
+                    <!-- Uppdatera för att visa information om den valda växten -->
+                    <h3>{{ selectedPlant.commonName }}</h3>
+                    <h4>Scientific Name: {{ selectedPlant.scientificName }}</h4>
+                    <!-- <p>Watering Schedule: {{ selectedPlant.wateringSchedule }}</p>
+                    <p>Sunlight Requirement: {{ selectedPlant.sunlightRequirement }}</p>
+                    <p>Poisonous: {{ selectedPlant.poisonous ? 'Yes' : 'No' }}</p> -->
+                </div>
+
+
+                <ul class="plant-list">
+                    <li v-for="plant in jsonData" :key="plant.commonName">
+                        <!-- Användaren klickar för att lägga till vald planta i sin lista -->
+                        <h3>{{ plant.commonName }}</h3>
+                        <button @click="addPlantToMyPlants(plant)">Add to my plants</button>
+                    </li>
+                </ul>
+
+                <h3>My Plants</h3>
+                <ul class="my-plants">
+                    <li v-for="myPlant in myPlants" :key="myPlant.commonName">
+                        <h3>{{ myPlant.commonName }} | {{ myPlant.scientificName }}</h3>
+                        <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
+                        <button @click="removePlant(myPlant)">Remove</button>
+                        <button @click="togglePlantInfo(myPlant)">Toggle Info</button>
+
+                        <!-- Använd v-if för att visa eller dölja informationen baserat på plantInfoVisible -->
+                        <div v-if="plantInfoVisible[myPlant.commonName]">
+                            <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
+                            <p>Sunlight Requirement: {{ myPlant.sunlightRequirement }}</p>
+                            <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="plant-filters">
+                    <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
+                    <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
+                            water</label></li>
+                    <li><label><input type="radio" name="filter" value="Watered" v-model="filterPlants"> Watered</label>
+                    </li>
+                </ul>
+
             </div>
 
-
-            <ul class="plant-list">
-                <li v-for="plant in jsonData" :key="plant.commonName">
-                    <!-- Användaren klickar för att lägga till vald planta i sin lista -->
-                    <button @click="selectPlant(plant)">{{ plant.commonName }}</button>
-                    <button @click="addPlantToMyPlants">Add to my plants</button>
-                </li>
-            </ul>
-
-            <h3>My Plants</h3>
-            <ul class="my-plants">
-                <li v-for="myPlant in myPlants" :key="myPlant.commonName">
-                    {{ myPlant.commonName }}
-                    <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
-                    <button @click="removePlant(myPlant)">Remove</button>
-                    <button @click="plaintInformation(myPlant)">Information</button>
-                </li>
-            </ul>
-
-            <ul>
-                <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
-                <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
-                        water</label></li>
-                <li><label><input type="radio" name="filter" value="Watered" v-model="filterPlants"> Watered</label>
-                </li>
-            </ul>
             <!--Antal växter som behöver vatten -->
 
         </main>

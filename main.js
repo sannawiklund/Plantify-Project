@@ -8,6 +8,7 @@ Vue.createApp({
             subTitle: '🌿 Your plant\'s best friend 🌿',
             myPlants: [], //Här kan man lägga en array av sina egna plantor?
             totalAmmountOfPlants: 0,
+            plantInfoVisible: {}
 
         };
     },
@@ -45,13 +46,11 @@ Vue.createApp({
             this.selectedPlant = plant;
         },
 
-        addPlantToMyPlants() {
-            if (this.selectedPlant) {
-                this.myPlants.push({
-                    commonName: this.selectedPlant.commonName,
-                    // Lägg till andra relevanta attribut från selectedPlant
-                });
-            }            
+        addPlantToMyPlants(plant) {
+            this.myPlants.push({
+                commonName: plant.commonName,
+                // Lägg till andra relevanta attribut från selectedPlant
+            });
             // on click, add to array
             // Ska man kunna lägga till samma planta flera gånger?
         },
@@ -63,7 +62,7 @@ Vue.createApp({
             }
         },
 
-        plantInformation(plant){
+        plantInformation(){
             if (this.selectedPlant) {
                 this.myPlants.push({
                     wateringSchedule: this.selectedPlant.wateringSchedule,
@@ -71,6 +70,15 @@ Vue.createApp({
                     poisonous: this.selectedPlant.poisonous,
                     // Lägg till andra relevanta attribut från selectedPlant
                 });
+            }
+        },
+
+        togglePlantInfo(myPlant) {
+            // Användaren klickar för att toggla informationen för den valda växten
+            if (this.plantInfoVisible.hasOwnProperty(myPlant.commonName)) {
+                this.$set(this.plantInfoVisible, myPlant.commonName, !this.plantInfoVisible[myPlant.commonName]);
+            } else {
+                this.$set(this.plantInfoVisible, myPlant.commonName, true);
             }
         },
 
@@ -85,6 +93,8 @@ Vue.createApp({
         filterPlants(){
 
         },
+
+
 
     },
 
