@@ -87,7 +87,7 @@ Vue.createApp({
         },
 
         countMyPlants(){
-
+            return this.myPlants.length;
         },
 
         filterPlants(){
