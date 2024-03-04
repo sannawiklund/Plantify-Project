@@ -7,6 +7,8 @@ Vue.createApp({
             projectTitle: 'Plantify Project',
             subTitle: '🌿 Your plant\'s best friend 🌿',
             myPlants: [], //Här kan man lägga en array av sina egna plantor?
+            totalAmmountOfPlants: 0,
+
         };
     },
     methods: {
@@ -19,10 +21,13 @@ Vue.createApp({
                 if (response.ok) {
                     // Parsa JSON och uppdatera jsonData med den hämtade datan
                     this.jsonData = await response.json();
+
+                    let searchTerm = this.plantName.toLowerCase();
+                    
                     let plantArray = this.jsonData.housePlants;
                     this.jsonData = plantArray.filter((plant) =>
-                        plant.commonName.includes(this.plantName) ||
-                        plant.scientificName.includes(this.plantName)
+                        plant.commonName.toLowerCase().includes(searchTerm) ||
+                        plant.scientificName.toLowerCase().includes(searchTerm)
                     );
                 } else {
                     console.error('Error fetching data:', response.statusText);
