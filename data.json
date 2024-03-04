@@ -11,245 +11,245 @@
             "scientificName": "Sansevieria trifasciata",
             "commonName": "Snake Plant",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Ficus elastica",
             "commonName": "Rubber Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Spathiphyllum wallisii",
             "commonName": "Peace Lily",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Chlorophytum comosum",
             "commonName": "Spider Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "medium to bright indirect",
+            "sunlightRequirement": "medium to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Ficus lyrata",
             "commonName": "Fiddle Leaf Fig",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Zamioculcas zamiifolia",
             "commonName": "ZZ Plant",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Aloe vera",
             "commonName": "Aloe Vera",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Dieffenbachia spp.",
             "commonName": "Dumb Cane",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "medium to bright indirect",
+            "sunlightRequirement": "medium to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Epiphyllum oxypetalum",
             "commonName": "Orchid Cactus",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Calathea orbifolia",
             "commonName": "Prayer Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "medium to bright indirect",
+            "sunlightRequirement": "medium to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Monstera deliciosa",
             "commonName": "Swiss Cheese Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Peperomia obtusifolia",
             "commonName": "Baby Rubber Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Nephrolepis exaltata",
             "commonName": "Boston Fern",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Fittonia spp.",
             "commonName": "Nerve Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Tradescantia zebrina",
             "commonName": "Wandering Jew",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Hedera helix",
             "commonName": "English Ivy",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Aglaonema spp.",
             "commonName": "Chinese Evergreen",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to moderate",
+            "sunlightRequirement": "low to moderate",
             "poisonous": true
         },
         {
             "scientificName": "Saintpaulia ionantha",
             "commonName": "African Violet",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Crassula ovata",
             "commonName": "Jade Plant",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Pilea peperomioides",
             "commonName": "Chinese Money Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Fittonia albivenis",
             "commonName": "Nerve Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Dracaena marginata",
             "commonName": "Dragon Tree",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Schefflera arboricola",
             "commonName": "Umbrella Plant",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Senecio rowleyanus",
             "commonName": "String of Pearls",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Cactaceae family",
             "commonName": "Cactus",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright",
+            "sunlightRequirement": "bright",
             "poisonous": false
         },
         {
             "scientificName": "Hoya carnosa",
             "commonName": "Hoyaplant",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Euphorbia milii",
             "commonName": "Crown of Thorns",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "bright",
+            "sunlightRequirement": "bright",
             "poisonous": true
         },
         {
             "scientificName": "Zantedeschia spp.",
             "commonName": "Calla Lily",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright",
+            "sunlightRequirement": "bright",
             "poisonous": true
         },
         {
             "scientificName": "Caladium spp.",
             "commonName": "Caladium",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Alocasia amazonica",
             "commonName": "Alocasia",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Aspidistra elatior",
             "commonName": "Cast Iron Plant",
             "wateringSchedule": "not so often",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": false
         },
         {
             "scientificName": "Pothos spp.",
             "commonName": "Devil's Ivy",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Philodendron hederaceum",
             "commonName": "Heartleaf Philodendron",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Anthurium andraeanum",
             "commonName": "Flamingo Flower",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "bright indirect",
+            "sunlightRequirement": "bright indirect",
             "poisonous": true
         },
         {
             "scientificName": "Fatsia japonica",
             "commonName": "Japanese Aralia",
             "wateringSchedule": "regular",
-            "sunlight_requirement": "low to bright indirect",
+            "sunlightRequirement": "low to bright indirect",
             "poisonous": true
         }
     ]
