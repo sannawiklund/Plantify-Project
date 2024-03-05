@@ -45,15 +45,16 @@ Vue.createApp({
             // Uppdatera selectedPlant med den valda växten
             this.selectedPlant = plant;
         },
-
         addPlantToMyPlants(plant) {
             this.myPlants.push({
                 commonName: plant.commonName,
                 // Lägg till andra relevanta attribut från selectedPlant
             });
-            // on click, add to array
-            // Ska man kunna lägga till samma planta flera gånger?
-        },
+        
+            // Lägg till informationen i plantInfoVisible när du lägger till planten
+            //this.$set(this.plantInfoVisible, plant.commonName, false); // Ersätt med direkt tilldelning
+            this.plantInfoVisible[plant.commonName] = false;
+        },        
 
         removePlant(myPlant) {
             const index = this.myPlants.indexOf(myPlant);
@@ -64,7 +65,9 @@ Vue.createApp({
 
         plantInformation(){
             if (this.selectedPlant) {
+                console.log('Selected Plant:', this.selectedPlant);
                 this.myPlants.push({
+                    commonName: this.selectedPlant.commonName,
                     wateringSchedule: this.selectedPlant.wateringSchedule,
                     sunlight: this.selectedPlant.sunlightRequirement, 
                     poisonous: this.selectedPlant.poisonous,
@@ -72,15 +75,23 @@ Vue.createApp({
                 });
             }
         },
+        
 
         togglePlantInfo(myPlant) {
             // Användaren klickar för att toggla informationen för den valda växten
             if (this.plantInfoVisible.hasOwnProperty(myPlant.commonName)) {
-                this.$set(this.plantInfoVisible, myPlant.commonName, !this.plantInfoVisible[myPlant.commonName]);
+                this.plantInfoVisible[myPlant.commonName] = !this.plantInfoVisible[myPlant.commonName];
             } else {
-                this.$set(this.plantInfoVisible, myPlant.commonName, true);
+                this.plantInfoVisible[myPlant.commonName] = true;
+            }
+        
+            // Uppdatera information om den valda växten när du visar informationen
+            if (this.plantInfoVisible[myPlant.commonName]) {
+                this.plantInformation();
             }
         },
+        
+        
 
         orderPlants(){
             //By name, requirements, room?

@@ -39,10 +39,11 @@
                     <!-- Uppdatera för att visa information om den valda växten -->
                     <h3>{{ selectedPlant.commonName }}</h3>
                     <h4>Scientific Name: {{ selectedPlant.scientificName }}</h4>
-                    <!-- <p>Watering Schedule: {{ selectedPlant.wateringSchedule }}</p>
-                    <p>Sunlight Requirement: {{ selectedPlant.sunlightRequirement }}</p>
-                    <p>Poisonous: {{ selectedPlant.poisonous ? 'Yes' : 'No' }}</p> -->
+                    <p>Watering Schedule: {{ myPlants[0].wateringSchedule }}</p>
+                    <p>Sunlight Requirement: {{ myPlants[0].sunlight }}</p>
+                    <p>Poisonous: {{ myPlants[0].poisonous ? 'Yes' : 'No' }}</p>
                 </div>
+                
 
 
                 <ul class="plant-list">
@@ -59,7 +60,7 @@
                         <h3>{{ myPlant.commonName }} | {{ myPlant.scientificName }}</h3>
                         <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
                         <button @click="removePlant(myPlant)">Remove</button>
-                        <button @click="togglePlantInfo(myPlant)">Toggle Info</button>
+                        <button @click="togglePlantInfo(myPlant)">Plant Information</button>
 
                         <!-- Använd v-if för att visa eller dölja informationen baserat på plantInfoVisible -->
                         <div v-if="plantInfoVisible[myPlant.commonName]">
