@@ -56,7 +56,7 @@
 
                 <h3>My Plants</h3>
                 <ul class="my-plants">
-                    <li v-for="myPlant in myPlants" :key="myPlant.commonName">
+                    <li v-for="myPlant in filterPlants()" :key="myPlant.commonName">
                         <h3>{{ myPlant.commonName }} | {{ myPlant.scientificName }}</h3>
                         <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
                         <button @click="removePlant(myPlant)">Remove</button>
@@ -77,17 +77,16 @@
                     <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
                     <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
                             water</label></li>
-                    <li><label><input type="radio" name="filter" value="Watered" v-model="filterPlants"> Watered</label>
-                    </li>
-                </ul>
-
+                        <li><label><input type="radio" name="filter" value="watered" v-model="filter"> Watered</label>
+                            </li>
+                    </ul>
+                    
+                    <!--Antal växter som behöver vatten -->
+                    
+                </section>
+                </main>
+                
             </div>
-
-            <!--Antal växter som behöver vatten -->
-
-        </main>
-
-    </div>
 
 </body>
 

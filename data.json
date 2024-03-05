@@ -6,7 +6,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to moderate",
             "poisonous": false,
-            "needsWater": false
+            "needsWater": true
         },
         {
             "scientificName": "Sansevieria trifasciata",
