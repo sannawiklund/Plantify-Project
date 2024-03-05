@@ -70,6 +70,8 @@
                     </li>
                 </ul>
 
+                <p>Total number of plants: {{ countMyPlants() }}</p>
+
                 <ul class="plant-filters">
                     <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
                     <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
