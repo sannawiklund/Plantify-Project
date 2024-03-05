@@ -49,7 +49,11 @@ Vue.createApp({
         addPlantToMyPlants(plant) {
             this.myPlants.push({
                 commonName: plant.commonName,
-                // Lägg till andra relevanta attribut från selectedPlant
+                scientificName: plant.scientificName,
+                wateringSchedule: plant.wateringSchedule,
+                sunlightRequirement: plant.sunlightRequirement,
+                poisonous: plant.poisonous,
+                needsWater: plant.needsWater
             });
         
             // Lägg till informationen i plantInfoVisible när du lägger till planten
