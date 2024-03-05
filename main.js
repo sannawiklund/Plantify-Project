@@ -8,7 +8,8 @@ Vue.createApp({
             subTitle: '🌿 Your plant\'s best friend 🌿',
             myPlants: [], //Här kan man lägga en array av sina egna plantor?
             totalAmmountOfPlants: 0,
-            plantInfoVisible: {}
+            plantInfoVisible: {},
+            filter: 'all'
 
         };
     },
@@ -86,16 +87,31 @@ Vue.createApp({
             //By name, requirements, room?
         },
 
+         //Counting stuff
         countMyPlants(){
             return this.myPlants.length;
         },
 
-        filterPlants(){
+        countPlantsThatNeedWater(){
 
         },
 
-
-
+        //Filter functions
+        filterWatered() {
+            return this.myPlants.filter(p => p.needsWater === false);
+        },
+        filterNeedsWater() {
+            return this.myPlants.filter(p => p.needsWater === true);
+        },
+        filterPlants() {
+            if (this.filter === 'watered') {
+                return this.filterWatered();
+            } else if (this.filter === 'needsWater') {
+                return this.filterNeedsWater();
+            } else {
+                return this.myPlants;
+            }
+        },
     },
 
 }).mount('#app');
