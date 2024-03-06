@@ -131,7 +131,19 @@ Vue.createApp({
             }
         },
         
-        
+        toggleWaterPlant(myPlant) {
+
+            myPlant.needsWater = !myPlant.needsWater;
+
+            // Uppdatera information om den valda växten när du ändrar vattenbehovet
+
+            if (this.plantInfoVisible[myPlant.commonName]) {
+
+                this.plantInformation();
+
+            }
+
+        },        
 
         orderPlants(){
             //By name, requirements, room?
@@ -143,7 +155,7 @@ Vue.createApp({
         },
 
         countPlantsThatNeedWater(){
-            return this.myPlants.filter(p => p.needsWater === true).length;
+            return this.myPlants.filter(p => p.needsWater === false).length;
         },
 
         //Filter functions
