@@ -1,4 +1,9 @@
 Vue.createApp({
+    created(){
+        //created körs när appen "skapas", antingen vid refresh eller när man startar upp webläsaren.
+        //Läser sedan in från localStorage om något finns sparat där. Coolt :D
+        this.readPlantsFromLocalStorage();
+    },
     data() {
         return {
             plantName: '',
@@ -59,6 +64,9 @@ Vue.createApp({
             // Lägg till informationen i plantInfoVisible när du lägger till planten
             //this.$set(this.plantInfoVisible, plant.commonName, false); // Ersätt med direkt tilldelning
             this.plantInfoVisible[plant.commonName] = false;
+
+            //Uppdaterar localStorage
+            this.updateLocalStorage();
         },        
 
         removePlant(myPlant) {
@@ -66,8 +74,34 @@ Vue.createApp({
             if (index !== -1) {
                 this.myPlants.splice(index, 1);
             }
+
+            //Uppdaterar localStorage
+            this.updateLocalStorage();
         },
 
+        //LocalStorage:
+        saveMyPlantsToLocalStorage() {
+            //Konverterar myPlants arrayen till en json-stäng för att lagra all data.
+            let myPlantsJson = JSON.stringify(this.myPlants);
+
+            //SetItem sparar datan under nyckeln 'myPlantsData'
+            localStorage.setItem('myPlantsData', myPlantsJson);
+        },
+
+        // Kallas på för att hålla localStorage up to date
+        updateLocalStorage() {
+            this.saveMyPlantsToLocalStorage();
+        },
+
+        readPlantsFromLocalStorage() {
+            let myPlantsJson = localStorage.getItem('myPlantsData');
+            if (myPlantsJson) {
+              // Om det finns sparade plantor, konvertera från JSON och uppdatera myPlants
+              this.myPlants = JSON.parse(myPlantsJson);
+            }
+          },
+
+        //Information
         plantInformation(){
             if (this.selectedPlant) {
                 console.log('Selected Plant:', this.selectedPlant);
@@ -76,6 +110,7 @@ Vue.createApp({
                     wateringSchedule: this.selectedPlant.wateringSchedule,
                     sunlight: this.selectedPlant.sunlightRequirement, 
                     poisonous: this.selectedPlant.poisonous,
+                    needsWater: this.selectedPlant.needsWater,
                     // Lägg till andra relevanta attribut från selectedPlant
                 });
             }
