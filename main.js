@@ -46,6 +46,7 @@ Vue.createApp({
             // Återställ selectedPlant när ny sökning görs
             this.selectedPlant = null;
             this.plantName = '';
+            this.searchedPlant = true;
         },
 
         selectPlant(plant) {
