@@ -14,7 +14,7 @@ body {
     max-width: 60%;
     background-color: #cccccc;
     border-radius: 20px;
-    /* box-shadow: 3px 8px 15px rgb(74, 88, 74); */
+    list-style-type: none;
 }
 
 header {
@@ -87,14 +87,13 @@ img {
     border-radius: 20px;
     aspect-ratio: 1;
     right: 0;
-    /* top: 15%; */
     color: #123813;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
     outline: none;
 }
 
-h3 {
+.myPlants {
     margin: 0px;
     padding: 0px;
 }
@@ -130,33 +129,27 @@ input#plant-display-text {
     border-style: none;
 }
 
-#app .plant-section {
+ul.plant-list {
+    list-style-type: none;
+}
+
+#app .plant-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-row-gap: 0px; */
     list-style-type: none;
 }
 
-#app .selected-Plant, .plant-list {
-    grid-column: 1;
+.searchAndChoosePlant {
+    /* grid-column: 1; */
     margin: 10px;
     list-style-type: none;
 }
 
-#app .my-plants, .plant-info, .plant-filters {
-    grid-column: 2;
+.myPlants-container {
+    /* grid-column: 2; */
     margin: 10px;
     list-style-type: none;
 }
-
-/* @media only screen and (max-width: 1520px) {
-    #title {
-    #app max width bör öka med 10-20% desto mindre skärmen bli.
-    Vid mobile så ska bredden vara 100% så att enbart app-content syns, ej bakgrund på sidorna. 
-    - 1920px bred på inkopplad skärm (anpassade storlekar: h1: font-size: 50px; h2: font-size: 20px; och plant-form.
-    - 1610px och nedåt skär sig h1
-    - 1520px bred på laptop
-    }
-} */

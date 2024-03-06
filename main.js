@@ -69,6 +69,9 @@ Vue.createApp({
 
             //Uppdaterar localStorage
             this.updateLocalStorage();
+
+            //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
+            this.searchedPlant = false;
         },
 
         removePlant(myPlant) {
