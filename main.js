@@ -1,5 +1,5 @@
 Vue.createApp({
-    created(){
+    created() {
         //created körs när appen "skapas", antingen vid refresh eller när man startar upp webläsaren.
         //Läser sedan in från localStorage om något finns sparat där. Coolt :D
         this.readPlantsFromLocalStorage();
@@ -30,7 +30,7 @@ Vue.createApp({
                     this.jsonData = await response.json();
 
                     let searchTerm = this.plantName.toLowerCase();
-                    
+
                     let plantArray = this.jsonData.housePlants;
                     this.jsonData = plantArray.filter((plant) =>
                         plant.commonName.toLowerCase().includes(searchTerm) ||
@@ -45,6 +45,7 @@ Vue.createApp({
 
             // Återställ selectedPlant när ny sökning görs
             this.selectedPlant = null;
+            this.plantName = '';
         },
 
         selectPlant(plant) {
@@ -60,14 +61,14 @@ Vue.createApp({
                 poisonous: plant.poisonous,
                 needsWater: plant.needsWater
             });
-        
+
             // Lägg till informationen i plantInfoVisible när du lägger till planten
             //this.$set(this.plantInfoVisible, plant.commonName, false); // Ersätt med direkt tilldelning
             this.plantInfoVisible[plant.commonName] = false;
 
             //Uppdaterar localStorage
             this.updateLocalStorage();
-        },        
+        },
 
         removePlant(myPlant) {
             const index = this.myPlants.indexOf(myPlant);
@@ -96,26 +97,26 @@ Vue.createApp({
         readPlantsFromLocalStorage() {
             let myPlantsJson = localStorage.getItem('myPlantsData');
             if (myPlantsJson) {
-              // Om det finns sparade plantor, konvertera från JSON och uppdatera myPlants
-              this.myPlants = JSON.parse(myPlantsJson);
+                // Om det finns sparade plantor, konvertera från JSON och uppdatera myPlants
+                this.myPlants = JSON.parse(myPlantsJson);
             }
-          },
+        },
 
         //Information
-        plantInformation(){
+        plantInformation() {
             if (this.selectedPlant) {
                 console.log('Selected Plant:', this.selectedPlant);
                 this.myPlants.push({
                     commonName: this.selectedPlant.commonName,
                     wateringSchedule: this.selectedPlant.wateringSchedule,
-                    sunlight: this.selectedPlant.sunlightRequirement, 
+                    sunlight: this.selectedPlant.sunlightRequirement,
                     poisonous: this.selectedPlant.poisonous,
                     needsWater: this.selectedPlant.needsWater,
                     // Lägg till andra relevanta attribut från selectedPlant
                 });
             }
         },
-        
+
 
         togglePlantInfo(myPlant) {
             // Användaren klickar för att toggla informationen för den valda växten
@@ -124,13 +125,13 @@ Vue.createApp({
             } else {
                 this.plantInfoVisible[myPlant.commonName] = true;
             }
-        
+
             // Uppdatera information om den valda växten när du visar informationen
             if (this.plantInfoVisible[myPlant.commonName]) {
                 this.plantInformation();
             }
         },
-        
+
         toggleWaterPlant(myPlant) {
 
             myPlant.needsWater = !myPlant.needsWater;
@@ -140,30 +141,29 @@ Vue.createApp({
             if (this.plantInfoVisible[myPlant.commonName]) {
 
                 this.plantInformation();
-
             }
 
-        },        
+        },
 
-        orderPlants(){
+        orderPlants() {
             //By name, requirements, room?
         },
 
-         //Counting stuff
-        countMyPlants(){
+        //Counting stuff
+        countMyPlants() {
             return this.myPlants.length;
         },
 
-        countPlantsThatNeedWater(){
+        countPlantsThatNeedWater() {
             return this.myPlants.filter(p => p.needsWater === false).length;
         },
 
         //Filter functions
         filterWatered() {
-            return this.myPlants.filter(p => p.needsWater === false);
+            return this.myPlants.filter(p => p.needsWater === true);
         },
         filterNeedsWater() {
-            return this.myPlants.filter(p => p.needsWater === true);
+            return this.myPlants.filter(p => p.needsWater === false);
         },
         filterPlants() {
             if (this.filter === 'watered') {

@@ -62,14 +62,17 @@
                         <!-- Lägg till andra attribut som ska visas/om de ska visas separat vid klick på "plantinfo"?-->
                         <label for="clickToWaterPlant">
                             <input type="checkbox" v-model="myPlant.needsWater" @click="toggleWaterPlant(myPlant)">
+                            <span>{{ myPlant.needsWater ? 'All good! 😊 ' : 'Water me please! 💧 ' }}</span>
                         </label>
 
                         <label for="clickToRemovePlant">
-                            <button @click="removePlant(myPlant)">Remove</button>
+                            <button @click="removePlant(myPlant)">Remove Plant</button>
                         </label>
-                        
+
                         <label for="clickForPlantInformation">
-                            <button @click="togglePlantInfo(myPlant)">Plant Information</button>
+                            <button @click="togglePlantInfo(myPlant)">
+                                {{ plantInfoVisible[myPlant.commonName] ? 'Hide plant information' : 'Show plant information' }}
+                            </button>
                         </label>
 
                         <!-- Använd v-if för att visa eller dölja informationen baserat på plantInfoVisible -->
@@ -78,7 +81,7 @@
                             <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
                             <p>Sunlight Requirement: {{ myPlant.sunlightRequirement }}</p>
                             <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }}</p>
-                            <p>Needs water: {{ myPlant.needsWater ? 'Yes' : 'No' }}</p>
+                            <p>Needs water: {{ myPlant.needsWater ? 'No' : 'Yes' }}</p>
                         </div>
                     </li>
                 </ul>

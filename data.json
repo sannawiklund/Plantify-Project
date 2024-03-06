@@ -14,7 +14,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Ficus elastica",
@@ -22,7 +22,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Spathiphyllum wallisii",
@@ -30,7 +30,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Chlorophytum comosum",
@@ -38,7 +38,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Medium to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Ficus lyrata",
@@ -46,7 +46,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Zamioculcas zamiifolia",
@@ -54,7 +54,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Aloe vera",
@@ -62,7 +62,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Dieffenbachia spp.",
@@ -70,7 +70,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Medium to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Epiphyllum oxypetalum",
@@ -78,7 +78,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Calathea orbifolia",
@@ -86,7 +86,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Medium to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Monstera deliciosa",
@@ -94,7 +94,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Peperomia obtusifolia",
@@ -102,7 +102,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Nephrolepis exaltata",
@@ -110,7 +110,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Fittonia spp.",
@@ -118,7 +118,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Tradescantia zebrina",
@@ -126,7 +126,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Hedera helix",
@@ -134,7 +134,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Aglaonema spp.",
@@ -142,7 +142,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to moderate",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Saintpaulia ionantha",
@@ -150,7 +150,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Crassula ovata",
@@ -158,7 +158,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Pilea peperomioides",
@@ -166,7 +166,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Fittonia albivenis",
@@ -174,7 +174,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Dracaena marginata",
@@ -182,7 +182,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Schefflera arboricola",
@@ -190,7 +190,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Senecio rowleyanus",
@@ -198,7 +198,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Cactaceae family",
@@ -206,7 +206,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Hoya carnosa",
@@ -214,7 +214,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Euphorbia milii",
@@ -222,7 +222,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Bright",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Zantedeschia spp.",
@@ -230,7 +230,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Caladium spp.",
@@ -238,7 +238,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Alocasia amazonica",
@@ -246,7 +246,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Aspidistra elatior",
@@ -254,7 +254,7 @@
             "wateringSchedule": "Not so often",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": false,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Pothos spp.",
@@ -262,7 +262,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Philodendron hederaceum",
@@ -270,7 +270,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Anthurium andraeanum",
@@ -278,7 +278,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         },
         {
             "scientificName": "Fatsia japonica",
@@ -286,7 +286,7 @@
             "wateringSchedule": "Regular",
             "sunlightRequirement": "Low to bright indirect",
             "poisonous": true,
-            "needsWater": true
+            "needsWater": false
         }
     ]
 }

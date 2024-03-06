@@ -94,6 +94,11 @@ img {
     outline: none;
 }
 
+h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
 .plant-form button:hover {
     color: #123813;
     background-color: rgba(173, 198, 173, 0.2);
