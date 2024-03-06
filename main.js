@@ -108,7 +108,7 @@ Vue.createApp({
         },
 
         countPlantsThatNeedWater(){
-
+            return this.myPlants.filter(p => p.needsWater === true).length;
         },
 
         //Filter functions
