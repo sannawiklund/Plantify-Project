@@ -42,6 +42,7 @@
                     <p>Watering Schedule: {{ myPlants[0].wateringSchedule }}</p>
                     <p>Sunlight Requirement: {{ myPlants[0].sunlight }}</p>
                     <p>Poisonous: {{ myPlants[0].poisonous ? 'Yes' : 'No' }}</p>
+                    <p>Needs water: {{ myPlants[0].needsWater ? 'Yes' : 'No' }}</p>
                 </div>
                 
 
@@ -67,6 +68,7 @@
                             <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
                             <p>Sunlight Requirement: {{ myPlant.sunlightRequirement }}</p>
                             <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }}</p>
+                            <p>Needs water: {{ myPlant.needsWater ? 'Yes' : 'No' }}</p>
                         </div>
                     </li>
                 </ul>
@@ -74,8 +76,8 @@
                 <p>Total number of plants: {{ countMyPlants() }}</p>
 
                 <ul class="plant-filters">
-                    <li><label><input type="radio" name="filter" value="all" v-model="filterPlants"> All</label></li>
-                    <li><label><input type="radio" name="filter" value="Needs water" v-model="filterPlants"> Needs
+                    <li><label><input type="radio" name="filter" value="all" v-model="filter"> All</label></li>
+                    <li><label><input type="radio" name="filter" value="needsWater" v-model="filter"> Needs
                             water</label></li>
                         <li><label><input type="radio" name="filter" value="watered" v-model="filter"> Watered</label>
                             </li>
