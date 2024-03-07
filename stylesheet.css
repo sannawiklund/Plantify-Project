@@ -17,6 +17,23 @@ body {
     list-style-type: none;
 }
 
+#app .plant-container {
+    text-align: center;
+    list-style-type: none;
+}
+
+.searchAndChoosePlant {
+    /* Ställ in så att display är none när inget sökresultat visas */
+    /* display: none; */
+    list-style-type: none;
+}
+
+.myPlants-container {
+    justify-content: center;
+    list-style-type: none;
+}
+
+
 header {
     display: grid;
     grid-template-columns: 1fr;
@@ -81,26 +98,28 @@ img {
     position: absolute;
     background-color: white;
     border: none;
-    height: 70%;
-    margin-right: 10px;
+    height: 71%;
+    margin-right: 8px;
     padding: 10px;
     border-radius: 20px;
     aspect-ratio: 1;
     right: 0;
     color: #123813;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     outline: none;
 }
 
 .myPlants {
+    font-size: 25px;
     margin: 0px;
     padding: 0px;
+    color: #123813;
 }
 
 .plant-form button:hover {
-    color: #123813;
-    background-color: rgba(173, 198, 173, 0.2);
+    color: #ffffff;
+    background-color: rgba(64, 147, 64, 0.419);
 }
 
 /* Placeholder-Text Styling (Texten som syns innan inmatning) */
@@ -108,7 +127,7 @@ img {
     margin: 0 auto;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     color: #123813;
     padding: 5px;
@@ -129,27 +148,89 @@ input#plant-display-text {
     border-style: none;
 }
 
+ul.my-plants {
+ 
+    padding: 0px;
+    margin: 1px;
+    list-style-type: none;
+    font-size: 13px;
+}
+
+.my-plants h3 {
+    margin: 3px;
+    font-size: 18px
+}
+
+ul.my-plants label {
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+}
+
+ul.plant-filters {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    list-style-type: none;
+    font-size: 13px;
+}
+
 ul.plant-list {
     list-style-type: none;
+    margin: 3px;
+    padding: 3px;
 }
 
-#app .plant-container {
+.plant-list {
+    padding: 10px;
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px; */
-    list-style-type: none;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
 }
 
-.searchAndChoosePlant {
-    /* grid-column: 1; */
-    margin: 10px;
-    list-style-type: none;
+.plant-list h3 {
+    margin: 3px;
 }
 
-.myPlants-container {
-    /* grid-column: 2; */
-    margin: 10px;
-    list-style-type: none;
+.plant-list button {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+    border: none;
+    height: 40%;
+    color: #123813;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.counters p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-evenly;
+    font-size: 13px;
+    margin: 2px;
+}
+
+/* Styling for buttons */
+.remove button,
+.information button {
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 2px;
+    border: none;
+    height: 70%;
+    color: #123813;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.remove button:hover,
+.information button:hover {
+    color: #ffffff;
+    background-color: rgba(64, 147, 64, 0.2);
 }

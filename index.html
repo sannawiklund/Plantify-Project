@@ -72,11 +72,11 @@
                                 <span>{{ myPlant.needsWater ? 'All good! 😊 ' : 'Water me please! 💧 ' }}</span>
                             </label>
     
-                            <label for="clickToRemovePlant">
+                            <label for="clickToRemovePlant" class="remove">
                                 <button @click="removePlant(myPlant)">Remove Plant</button>
                             </label>
     
-                            <label for="clickForPlantInformation">
+                            <label for="clickForPlantInformation" class="information">
                                 <button @click="togglePlantInfo(myPlant)">
                                     {{ plantInfoVisible[myPlant.commonName] ? 'Hide plant information' : 'Show plant information' }}
                                 </button>
@@ -92,6 +92,8 @@
                         </li>
                     </ul>
     
+                    <hr>
+                    
                     <div class="counters">
                         <p>Total number of plants: {{ countMyPlants() }}</p>
                         <p>Plants that need water: {{ countPlantsThatNeedWater() }}</p>
