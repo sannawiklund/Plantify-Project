@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- minimum-scale=1 is necessary to avoid a scaling error -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1"> 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="main.js" defer></script>
 
@@ -33,14 +34,12 @@
                 <button type="submit">Search</button>
             </form>
 
-            <!-- Separat section för allt som dyker upp när användaren gör en sökning -->
             <div class="plant-container">
 
                 <div class="searchAndChoosePlant">
     
                     <ul class="plant-list">
                         <li v-for="plant in jsonData" :key="plant.commonName" v-if="searchedPlant">
-                            <!-- Användaren klickar för att lägga till vald planta i sin lista -->
                             <h3>{{ plant.commonName }}</h3>
                             <label>
                                 <button @click="addPlantToMyPlants(plant)">Add to my plants</button>

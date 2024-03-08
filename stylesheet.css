@@ -17,6 +17,7 @@ body {
     font-style: normal;
     background-image: url("https://a-static.besthdwallpaper.com/green-leaves-with-black-shadow-wallpaper-1920x1080-78534_48.jpg");
     background-color: rgb(43, 70, 44);
+    overflow-x: hidden;
 }
 
 /* App container styling */
