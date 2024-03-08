@@ -20,6 +20,7 @@
     <div id="app">
 
         <header>
+            <div class="semiCircle"></div>
             <img src="Header.jpg" alt="">
             <h1 class="title">{{ projectTitle }}</h1>
             <h2 class="subTitle">{{ subTitle }}</h2>
@@ -73,11 +74,10 @@
                                 </button>
                             </label>
     
-                            <div v-if="plantInfoVisible[myPlant.commonName]">
-                                <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
+                            <div v-if="plantInfoVisible[myPlant.commonName]" class="plantInformation">
                                 <p>Sunlight Requirement: {{ myPlant.sunlightRequirement }}</p>
-                                <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }}</p>
-                                <p>Needs water: {{ myPlant.needsWater ? 'Yes' : 'No' }}</p>
+                                <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }} | Needs water: {{ myPlant.needsWater ? 'Yes' : 'No' }}</p>
+                                <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
                                 <p>Last watered: {{ convertTimestamp(myPlant.lastWateredTime) }}</p>
                             </div>
                         </li>

@@ -21,7 +21,6 @@ Vue.createApp({
             plantInfoVisible: {},
             filter: 'all',
             searchedPlant: '',
-
         };
     },
     methods: {
