@@ -116,11 +116,11 @@ img {
     background-color: white;
     border: none;
     height: 71%;
-    margin-right: 8px;
     padding: 10px;
     border-radius: 20px;
     aspect-ratio: 1;
     right: 0;
+    margin-right: 18px;
     color: var(--main-color);
     font-family: var(--main-font);
     font-size: var(--main-font-size);
@@ -188,9 +188,10 @@ ul.plant-list {
     font-size: 20px;
 }
 
-ul.my-plants h3{
+ul.my-plants h3 {
     margin: 4px;
 }
+
 ul.my-plants label {
     padding: 0;
     margin: 0;
@@ -229,7 +230,7 @@ li.plant-list {
 
 /* Counter styling */
 .counters {
-    color: #ffffff;
+    color: #123813;
     display: flex;
     justify-content: center;
 }
@@ -244,7 +245,7 @@ li.plant-list {
 }
 
 /* Button styling */
-.remove button,
+.clickToWater button, .remove button,
 .information button {
     background-color: white;
     border-radius: 20px;
@@ -264,7 +265,7 @@ input[type=radio] {
 }
 
 /* Button hover styling */
-.remove button:hover,
+.clickToWater button:hover, .remove button:hover,
 .information button:hover {
     color: #ffffff;
     background-color: var(--hover-bg-color);

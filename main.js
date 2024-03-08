@@ -1,8 +1,13 @@
 Vue.createApp({
     created() {
         //created körs när appen "skapas", antingen vid refresh eller när man startar upp webläsaren.
-        //Läser sedan in från localStorage om något finns sparat där. Coolt :D
+        //Läser ago in från localStorage om något finns sparat där. Coolt :D
         this.readPlantsFromLocalStorage();
+
+        // Anropar updateWaterStatus varje minut (60 000 millisekunder)
+        setInterval(() => {
+            this.updateWaterStatus();
+        }, 1000); //Ändra denna till önskad interval för tid, just nu 10 sekunders testtid
     },
     data() {
         return {
@@ -14,7 +19,8 @@ Vue.createApp({
             myPlants: [], //Här kan man lägga en array av sina egna plantor?
             totalAmmountOfPlants: 0,
             plantInfoVisible: {},
-            filter: 'all'
+            filter: 'all',
+            searchedPlant: '',
 
         };
     },
@@ -53,14 +59,17 @@ Vue.createApp({
             // Uppdatera selectedPlant med den valda växten
             this.selectedPlant = plant;
         },
+
         addPlantToMyPlants(plant) {
+            console.log(plant);
             this.myPlants.push({
                 commonName: plant.commonName,
                 scientificName: plant.scientificName,
                 wateringSchedule: plant.wateringSchedule,
                 sunlightRequirement: plant.sunlightRequirement,
                 poisonous: plant.poisonous,
-                needsWater: plant.needsWater
+                needsWater: plant.needsWater,
+                lastWateredTime: 0
             });
 
             // Lägg till informationen i plantInfoVisible när du lägger till planten
@@ -136,9 +145,11 @@ Vue.createApp({
             }
         },
 
-        toggleWaterPlant(myPlant) {
+        waterPlant(myPlant) {
+            console.log("Water", myPlant);
+            myPlant.lastWateredTime = new Date().getTime();
+            myPlant.needsWater = false;
 
-            myPlant.needsWater = !myPlant.needsWater;
 
             // Uppdatera information om den valda växten när du ändrar vattenbehovet
 
@@ -149,8 +160,47 @@ Vue.createApp({
 
         },
 
-        orderPlants() {
-            //By name, requirements, room?
+        updateWaterStatus() {
+            const currentTime = new Date().getTime();
+
+            this.myPlants.forEach(myPlant => {
+                // Sekunder sedan plantan vattnades sist   
+                const diff = (currentTime - myPlant.lastWateredTime) / 1000;
+                if (diff > 10) { //Ändra denna till önskad interval för tid, just nu 10 sekunders testtid
+                    myPlant.needsWater = true;
+                }
+            });
+        },
+
+        convertTimestamp(time) {
+            const currentTime = new Date().getTime();
+            // Sekunder sedan plantan vattnades
+            const diff = (currentTime - time) / 1000;
+            
+            if (time == 0) {
+                // Specialfall, aldrig vattnad
+                return "Never watered";
+            }
+            else if (diff > (60*60*24)) {
+                // Visa i dagar
+                const days = Math.round(diff/(60*60*24));
+                return "About " + days + " days ago";
+            }
+            else if (diff > (60*60)) {
+                // Visa i timmar
+                const hours = Math.round(diff/(60*60));
+                return "About " + hours + " hours ago";
+            }
+            else if (diff > 60) {
+                // Visa i minuter
+                const minutes = Math.round(diff/60);
+                return "About " + minutes + " minutes ago";
+            }
+            else {
+                // Visa i sekunder
+                const seconds = Math.round(diff);
+                return "About " + seconds + " seconds ago";
+            }
         },
 
         //Counting stuff
@@ -159,15 +209,15 @@ Vue.createApp({
         },
 
         countPlantsThatNeedWater() {
-            return this.myPlants.filter(p => p.needsWater === false).length;
+            return this.myPlants.filter(p => p.needsWater === true).length;
         },
 
         //Filter functions
         filterWatered() {
-            return this.myPlants.filter(p => p.needsWater === true);
+            return this.myPlants.filter(p => p.needsWater === false);
         },
         filterNeedsWater() {
-            return this.myPlants.filter(p => p.needsWater === false);
+            return this.myPlants.filter(p => p.needsWater === true);
         },
         filterPlants() {
             if (this.filter === 'watered') {
