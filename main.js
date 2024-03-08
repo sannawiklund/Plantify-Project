@@ -80,6 +80,8 @@ Vue.createApp({
 
             //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
             this.searchedPlant = false;
+
+            
         },
 
         removePlant(myPlant) {
@@ -129,6 +131,10 @@ Vue.createApp({
             }
         },
 
+        clearSearchResults() {
+            this.jsonData = { housePlants: [] };
+            this.searchedPlant = false;
+        },
 
         togglePlantInfo(myPlant) {
             // Användaren klickar för att toggla informationen för den valda växten

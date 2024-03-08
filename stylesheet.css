@@ -127,20 +127,29 @@ img {
     width: 100%;
 }
 
-.plant-form button {
+button.submit, button.clearSearch {
     position: absolute;
     background-color: white;
     border: none;
-    height: 71%;
+    height: 72%;
     padding: 10px;
     border-radius: 20px;
     aspect-ratio: 1;
-    right: 0;
-    margin-right: 18px;
     color: var(--main-color);
     font-family: var(--main-font);
     font-size: var(--main-font-size);
     outline: none;
+}
+
+button.submit {
+    right: 0;
+    margin-right: 18px;
+}
+
+button.clearSearch {
+    left: 0;
+    margin-left: 18px;
+
 }
 
 /* MyPlants styling */
