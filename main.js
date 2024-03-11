@@ -1,7 +1,7 @@
 Vue.createApp({
     created() {
         //created körs när appen "skapas", antingen vid refresh eller när man startar upp webläsaren.
-        //Läser ago in från localStorage om något finns sparat där. Coolt :D
+        //Läser in från localStorage om något finns sparat där. 
         this.readPlantsFromLocalStorage();
 
         // Anropar updateWaterStatus varje minut (60 000 millisekunder)
@@ -12,11 +12,11 @@ Vue.createApp({
     data() {
         return {
             plantName: '',
-            jsonData: { housePlants: [] }, //Lagrar housePlants-datan i en lista
-            selectedPlant: null, //Den valda plantan
+            jsonData: { housePlants: [] },
+            selectedPlant: null, 
             projectTitle: 'Plantify Project',
             subTitle: '🌿 Your plant\'s best friend 🌿',
-            myPlants: [], //Här kan man lägga en array av sina egna plantor?
+            myPlants: [], 
             totalAmmountOfPlants: 0,
             plantInfoVisible: {},
             filter: 'all',
@@ -26,12 +26,9 @@ Vue.createApp({
     methods: {
         async fetchJson() {
             try {
-                // Fetchar datan från json-filen
                 const response = await fetch('data.json');
 
-                // Kontrollera att fetch gått igenom (status 200)
                 if (response.ok) {
-                    // Parsa JSON och uppdatera jsonData med den hämtade datan
                     this.jsonData = await response.json();
 
                     let searchTerm = this.plantName.toLowerCase();
@@ -61,8 +58,20 @@ Vue.createApp({
 
         addPlantToMyPlants(plant) {
             console.log(plant);
+
+            let existingPlant = this.myPlants.filter(p => p.commonName.startsWith(plant.commonName));
+            let usedNumbers = existingPlant.map(p => {
+                const suffix = p.commonName.slice(plant.commonName.length - 1);
+                return parseInt(suffix);
+            });
+
+            let plantNumber = 1;
+            while (usedNumbers.includes(plantNumber)) {
+                plantNumber++;
+            }
+
             this.myPlants.push({
-                commonName: plant.commonName,
+                commonName: plantNumber > 1 ? plant.commonName + ' ' + plantNumber : plant.commonName, // lägger till ett nummer om det finns mer än en växt
                 scientificName: plant.scientificName,
                 wateringSchedule: plant.wateringSchedule,
                 sunlightRequirement: plant.sunlightRequirement,
@@ -75,7 +84,6 @@ Vue.createApp({
             //this.$set(this.plantInfoVisible, plant.commonName, false); // Ersätt med direkt tilldelning
             this.plantInfoVisible[plant.commonName] = false;
 
-            //Uppdaterar localStorage
             this.updateLocalStorage();
 
             //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
@@ -89,7 +97,6 @@ Vue.createApp({
                 this.myPlants.splice(index, 1);
             }
 
-            //Uppdaterar localStorage
             this.updateLocalStorage();
         },
 
@@ -125,7 +132,6 @@ Vue.createApp({
                     sunlight: this.selectedPlant.sunlightRequirement,
                     poisonous: this.selectedPlant.poisonous,
                     needsWater: this.selectedPlant.needsWater,
-                    // Lägg till andra relevanta attribut från selectedPlant
                 });
             }
         },
@@ -136,7 +142,6 @@ Vue.createApp({
         },
 
         togglePlantInfo(myPlant) {
-            // Användaren klickar för att toggla informationen för den valda växten
             if (this.plantInfoVisible.hasOwnProperty(myPlant.commonName)) {
                 this.plantInfoVisible[myPlant.commonName] = !this.plantInfoVisible[myPlant.commonName];
             } else {
@@ -154,14 +159,10 @@ Vue.createApp({
             myPlant.lastWateredTime = new Date().getTime();
             myPlant.needsWater = false;
 
-
             // Uppdatera information om den valda växten när du ändrar vattenbehovet
-
             if (this.plantInfoVisible[myPlant.commonName]) {
-
                 this.plantInformation();
             }
-
         },
 
         updateWaterStatus() {
@@ -174,7 +175,7 @@ Vue.createApp({
                     myPlant.needsWater = true;
                 }
             });
-
+            
             this.saveMyPlantsToLocalStorage();
         },
 
@@ -209,7 +210,7 @@ Vue.createApp({
             }
         },
 
-        //Counting stuff
+        //Counting functions
         countMyPlants() {
             return this.myPlants.length;
         },
@@ -222,9 +223,11 @@ Vue.createApp({
         filterWatered() {
             return this.myPlants.filter(p => p.needsWater === false);
         },
+
         filterNeedsWater() {
             return this.myPlants.filter(p => p.needsWater === true);
         },
+
         filterPlants() {
             if (this.filter === 'watered') {
                 return this.filterWatered();
