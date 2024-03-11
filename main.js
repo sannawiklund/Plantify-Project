@@ -174,6 +174,8 @@ Vue.createApp({
                     myPlant.needsWater = true;
                 }
             });
+
+            this.saveMyPlantsToLocalStorage();
         },
 
         convertTimestamp(time) {
