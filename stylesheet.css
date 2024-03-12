@@ -207,11 +207,16 @@ input#plant-display-text {
 ul.my-plants,
 ul.plant-filters,
 ul.plant-list {
-    padding: 4px;
+    padding: 10px;
     margin: 0 auto;
     max-width: 40em;
     list-style-type: none;
     font-size: var(--main-font-size);
+}
+
+label, input ul.plant-filter {
+    padding: 0.5em;
+    margin: 0.5em;
 }
 
 .plant-filters {
