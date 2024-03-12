@@ -57,21 +57,9 @@ Vue.createApp({
         },
 
         addPlantToMyPlants(plant) {
-            console.log(plant);
-
-            let existingPlant = this.myPlants.filter(p => p.commonName.startsWith(plant.commonName));
-            let usedNumbers = existingPlant.map(p => {
-                const suffix = p.commonName.slice(plant.commonName.length - 1);
-                return parseInt(suffix);
-            });
-
-            let plantNumber = 1;
-            while (usedNumbers.includes(plantNumber)) {
-                plantNumber++;
-            }
 
             this.myPlants.push({
-                commonName: plantNumber > 1 ? plant.commonName + ' ' + plantNumber : plant.commonName, // lägger till ett nummer om det finns mer än en växt
+                commonName: plant.commonName,
                 scientificName: plant.scientificName,
                 wateringSchedule: plant.wateringSchedule,
                 sunlightRequirement: plant.sunlightRequirement,
@@ -81,14 +69,12 @@ Vue.createApp({
             });
 
             // Lägg till informationen i plantInfoVisible när du lägger till planten
-            //this.$set(this.plantInfoVisible, plant.commonName, false); // Ersätt med direkt tilldelning
             this.plantInfoVisible[plant.commonName] = false;
 
             this.updateLocalStorage();
 
             //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
             this.searchedPlant = false;
-
         },
 
         removePlant(myPlant) {
