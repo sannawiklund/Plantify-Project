@@ -16,7 +16,6 @@
 
 /* Body styling */
 body {
-    display: flex;
     font-family: "DM Serif Text", serif;
     font-weight: 300;
     font-style: normal;
@@ -30,9 +29,15 @@ body {
     justify-content: center;
     margin: 0 auto;
     max-width: 60rem;
-    background-color: var(--main-bg-color);
     border-radius: 20px;
     list-style-type: none;
+}
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    background-color: var(--main-bg-color);
+
 }
 
 /* Common styling for plant containers */
@@ -99,7 +104,6 @@ img {
     z-index: 2;
     color: #ffffff;
     position: relative;
-    /* Lägg till relativ position för att hantera z-index */
 }
 
 #app .title {
