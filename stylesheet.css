@@ -71,6 +71,7 @@ header {
     border-radius: 20px;
     position: relative;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .semiCircle {
@@ -85,17 +86,6 @@ header {
     border-radius: 30em 30em 0 0;
     z-index: 2;
 }
-
-/* Image styling
-img {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 3;
-    z-index: 0;
-    margin: 0 auto;
-    max-width: 60rem;
-    width: 100%;
-    max-height: auto;
-} */
 
 /* Title and subtitle styling */
 #app .title,
