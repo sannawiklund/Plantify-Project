@@ -81,9 +81,9 @@ Vue.createApp({
         },
 
         removePlant(myPlant) {
-            const index = this.myPlants.indexOf(myPlant);
-            if (index !== -1) {
-                this.myPlants.splice(index, 1);
+            const removeIndex = this.myPlants.indexOf(myPlant);
+            if (removeIndex !== -1) {
+                this.myPlants.splice(removeIndex, 1);
             }
 
             this.updateLocalStorage();
