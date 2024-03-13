@@ -30,6 +30,7 @@ body {
     margin: 0 auto;
     max-width: 60rem;
     border-radius: 20px;
+    min-width: 375px;
     list-style-type: none;
 }
 
@@ -37,6 +38,7 @@ main {
     max-width: 60rem;
     margin: 0 auto;
     background-color: var(--main-bg-color);
+    padding: 1em;
 
 }
 
@@ -46,6 +48,8 @@ main {
 .myPlants-container {
     text-align: center;
     list-style-type: none;
+    margin: 0 auto;
+    
 }
 
 .myPlants-container {
@@ -71,6 +75,7 @@ header {
     border-radius: 20px;
     position: relative;
     width: 100%;
+    min-width: 375px;
     overflow-x: hidden;
 }
 
@@ -79,8 +84,8 @@ header {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 30em;
-    height: 15em;
+    width: 27em;
+    height: 13em;
     color: #767676;
     background-color: #0c2c0d87;
     border-radius: 30em 30em 0 0;
@@ -99,7 +104,7 @@ header {
 #app .title {
     grid-row: 2;
     align-content: end;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 2px;
     margin: 0;
     letter-spacing: 2px;
@@ -123,7 +128,7 @@ header {
     padding: 0.5em;
     max-height: 4em;
     min-height: 1em;
-    max-width: 35rem;
+    max-width: 30rem;
     position: relative;
 }
 
@@ -136,7 +141,7 @@ button.clearSearch {
     position: absolute;
     background-color: white;
     border: none;
-    height: 71%;
+    height: 72%;
     padding: 10px;
     border-radius: 20px;
     aspect-ratio: 1;
@@ -148,12 +153,12 @@ button.clearSearch {
 
 button.submit {
     right: 0;
-    margin-right: 15px;
+    margin-right: 8px;
 }
 
 button.clearSearch {
     left: 0;
-    margin-left: 15px;
+    margin-left: 8px;
 
 }
 
@@ -205,17 +210,17 @@ input#plant-display-text {
 ul.my-plants,
 ul.plant-filters,
 ul.plant-list {
-    padding: 10px;
+    padding: 8px;
     margin: 0 auto;
-    max-width: 40em;
+    max-width: 34em;
     list-style-type: none;
     font-size: var(--main-font-size);
 }
 
 label,
 input ul.plant-filter {
-    padding: 0.5em;
-    margin: 0.5em;
+    padding: 5px;
+    margin: 3px;
 }
 
 .plant-filters {
@@ -253,7 +258,7 @@ li.plant-list {
 
 .plant-list h3 {
     margin: 3px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .plant-list button {
@@ -274,6 +279,7 @@ li.plant-list {
     color: #123813;
     display: flex;
     justify-content: center;
+    padding-top: 1em;
 }
 
 .counters p {
@@ -281,7 +287,7 @@ li.plant-list {
     flex-direction: row;
     justify-content: center;
     align-content: space-evenly;
-    font-size: var(--main-font-size);
+    font-size: 14px;
     margin: 2px;
 }
 
@@ -314,9 +320,9 @@ input[type=radio] {
     accent-color: rgb(15, 146, 0);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
     ul.my-plants {
-        padding: 2px;
+        padding: 5px;
     }
 
     ul.my-plants h3 {
@@ -324,10 +330,18 @@ input[type=radio] {
         font-size: 18px;
     }
 
+    .plant-list h3 {
+        font-size: 14px;
+    }
+
+    .plant-list button {
+        font-size: 10px;
+    }
+
     .clickToWater button,
     .remove button,
     .information button {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .counters p {
@@ -337,5 +351,39 @@ input[type=radio] {
 
     ul.plant-filters {
         padding: 2px;
+    }
+}
+
+@media screen and (max-width: 410px) {
+
+    ul.my-plants {
+        padding: 3px;
+    }
+
+    .plant-list h3 {
+        font-size: 15px;
+    } 
+
+    .plant-list button {
+        font-size: 10px;
+    }
+
+    .clickToWater button,
+    .remove button,
+    .information button {
+        font-size: 9px;
+    }
+
+    .counters p {
+        padding-top: 3px;
+        font-size: 12px;
+    }
+
+    ul.plant-filters {
+        padding: 2px;
+    }
+
+    input#plant-display-text {
+        padding-right: 20px;
     }
 }
