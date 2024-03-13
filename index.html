@@ -69,11 +69,11 @@
     
                             <label for="clickForPlantInformation" class="information">
                                 <button @click="togglePlantInfo(myPlant)">
-                                    {{ plantInfoVisible[myPlant.commonName] ? 'Hide plant information' : 'Show plant information' }}
+                                    {{ plantInfoVisible[myPlant.index] ? 'Hide plant information' : 'Show plant information' }}
                                 </button>
                             </label>
     
-                            <div v-if="plantInfoVisible[myPlant.commonName]" class="plantInformation">
+                            <div v-if="plantInfoVisible[myPlant.index]" class="plantInformation">
                                 <p>Sunlight Requirement: {{ myPlant.sunlightRequirement }}</p>
                                 <p>Poisonous: {{ myPlant.poisonous ? 'Yes' : 'No' }} | Needs water: {{ myPlant.needsWater ? 'Yes' : 'No' }}</p>
                                 <p>Watering Schedule: {{ myPlant.wateringSchedule }}</p>
