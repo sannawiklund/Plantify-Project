@@ -21,6 +21,7 @@ Vue.createApp({
             plantInfoVisible: {},
             filter: 'all',
             searchedPlant: '',
+            index: 0
         };
     },
     methods: {
@@ -57,8 +58,9 @@ Vue.createApp({
         },
 
         addPlantToMyPlants(plant) {
-
+            
             this.myPlants.push({
+                index: this.index,
                 commonName: plant.commonName,
                 scientificName: plant.scientificName,
                 wateringSchedule: plant.wateringSchedule,
@@ -69,10 +71,11 @@ Vue.createApp({
             });
 
             // Lägg till informationen i plantInfoVisible när du lägger till planten
-            this.plantInfoVisible[plant.commonName] = false;
+            this.plantInfoVisible[this.index] = false;
 
             this.updateLocalStorage();
 
+            this.index++;
             //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
             this.searchedPlant = false;
         },
@@ -128,14 +131,17 @@ Vue.createApp({
         },
 
         togglePlantInfo(myPlant) {
-            if (this.plantInfoVisible.hasOwnProperty(myPlant.commonName)) {
-                this.plantInfoVisible[myPlant.commonName] = !this.plantInfoVisible[myPlant.commonName];
+
+            let plantIndex= myPlant.index;
+
+            if (this.plantInfoVisible.hasOwnProperty(plantIndex)) {
+                this.plantInfoVisible[plantIndex] = !this.plantInfoVisible[plantIndex];
             } else {
-                this.plantInfoVisible[myPlant.commonName] = true;
+                this.plantInfoVisible[plantIndex] = true;
             }
 
             // Uppdatera information om den valda växten när du visar informationen
-            if (this.plantInfoVisible[myPlant.commonName]) {
+            if (this.plantInfoVisible[plantIndex]) {
                 this.plantInformation();
             }
         },
@@ -146,7 +152,7 @@ Vue.createApp({
             myPlant.needsWater = false;
 
             // Uppdatera information om den valda växten när du ändrar vattenbehovet
-            if (this.plantInfoVisible[myPlant.commonName]) {
+            if (this.plantInfoVisible[myPlant.index]) {
                 this.plantInformation();
             }
         },
