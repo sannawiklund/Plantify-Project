@@ -327,7 +327,7 @@ input[type=radio] {
 
     ul.my-plants h3 {
         margin: 2px;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .plant-list h3 {
@@ -361,7 +361,7 @@ input[type=radio] {
     }
 
     .plant-list h3 {
-        font-size: 15px;
+        font-size: 13px;
     } 
 
     .plant-list button {
@@ -385,5 +385,39 @@ input[type=radio] {
 
     input#plant-display-text {
         padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    ul.my-plants {
+        padding: 3px;
+    }
+
+    .plant-list h3 {
+        font-size: 12px;
+    } 
+
+    .plant-list button {
+        font-size: 9px;
+    }
+
+    .clickToWater button,
+    .remove button,
+    .information button {
+        font-size: 9px;
+    }
+
+    .counters p {
+        padding-top: 3px;
+        font-size: 10px;
+    }
+
+    ul.plant-filters {
+        padding: 2px;
+    }
+
+    input#plant-display-text {
+        padding-right: 30px;
     }
 }
