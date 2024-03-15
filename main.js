@@ -1,13 +1,11 @@
 Vue.createApp({
     created() {
-        //created körs när appen "skapas", antingen vid refresh eller när man startar upp webläsaren.
-        //Läser in från localStorage om något finns sparat där. 
         this.readPlantsFromLocalStorage();
 
-        // Anropar updateWaterStatus varje minut (60 000 millisekunder)
+        // Anropar updateWaterStatus, ändra denna till önskad interval för tid, just nu 10 sekunders testtid
         setInterval(() => {
             this.updateWaterStatus();
-        }, 1000); //Ändra denna till önskad interval för tid, just nu 10 sekunders testtid
+        }, 1000); 
     },
     data() {
         return {
@@ -70,13 +68,11 @@ Vue.createApp({
                 lastWateredTime: 0
             });
 
-            // Lägg till informationen i plantInfoVisible när du lägger till planten
             this.plantInfoVisible[this.index] = false;
 
             this.updateLocalStorage();
 
             this.index++;
-            //Tar bort sökresultatet efter att användaren lagt till plantan i sin lista
             this.searchedPlant = false;
         },
 
@@ -91,14 +87,11 @@ Vue.createApp({
 
         //LocalStorage:
         saveMyPlantsToLocalStorage() {
-            //Konverterar myPlants arrayen till en json-stäng för att lagra all data.
             let myPlantsJson = JSON.stringify(this.myPlants);
 
-            //SetItem sparar datan under nyckeln 'myPlantsData'
             localStorage.setItem('myPlantsData', myPlantsJson);
         },
 
-        // Kallas på för att hålla localStorage up to date
         updateLocalStorage() {
             this.saveMyPlantsToLocalStorage();
         },
@@ -106,12 +99,10 @@ Vue.createApp({
         readPlantsFromLocalStorage() {
             let myPlantsJson = localStorage.getItem('myPlantsData');
             if (myPlantsJson) {
-                // Om det finns sparade plantor, konvertera från JSON och uppdatera myPlants
                 this.myPlants = JSON.parse(myPlantsJson);
             }
         },
 
-        //Information
         plantInformation() {
             if (this.selectedPlant) {
                 console.log('Selected Plant:', this.selectedPlant);
@@ -120,7 +111,7 @@ Vue.createApp({
                     wateringSchedule: this.selectedPlant.wateringSchedule,
                     sunlight: this.selectedPlant.sunlightRequirement,
                     poisonous: this.selectedPlant.poisonous,
-                    needsWater: this.selectedPlant.needsWater,
+                    needsWater: this.selectedPlant.needsWater
                 });
             }
         },
@@ -140,7 +131,6 @@ Vue.createApp({
                 this.plantInfoVisible[plantIndex] = true;
             }
 
-            // Uppdatera information om den valda växten när du visar informationen
             if (this.plantInfoVisible[plantIndex]) {
                 this.plantInformation();
             }
@@ -151,7 +141,6 @@ Vue.createApp({
             myPlant.lastWateredTime = new Date().getTime();
             myPlant.needsWater = false;
 
-            // Uppdatera information om den valda växten när du ändrar vattenbehovet
             if (this.plantInfoVisible[myPlant.index]) {
                 this.plantInformation();
             }
